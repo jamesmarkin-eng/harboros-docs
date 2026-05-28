@@ -1,97 +1,87 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "almond",
-  "name": "Product Guide",
-  "description": "Step-by-step guides for every product—platform setup, analytics, and integrations in one place.",
+  "theme": "maple",
+  "name": "HarborOS",
   "colors": {
-    "primary": "#166E3F",
-    "light": "#26BD6C",
-    "dark": "#166E3F"
+    "primary": "#0B1F3A",
+    "light": "#1E3A5F",
+    "dark": "#0B1F3A"
   },
   "favicon": "/favicon.ico",
-  "icons": {
-    "library": "lucide"
-  },
-  "styling": {
-    "eyebrows": "breadcrumbs"
-  },
-  "contextual": {
-    "options": ["copy", "view", "assistant", "mcp", "add-mcp"]
-  },
   "navigation": {
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Home",
-          "icon": "house",
-          "href": "/"
-        },
-        {
-          "anchor": "Changelog",
-          "icon": "scroll-text",
-          "href": "https://www.mintlify.com/docs/changelog"
-        },
-        {
-          "anchor": "Help",
-          "icon": "life-buoy",
-          "href": "https://www.mintlify.com/docs/contact-support"
-        }
-      ]
-    },
-    "directory": "card",
-    "groups": [
+    "tabs": [
       {
-        "group": "Platform",
-        "icon": "layers",
-        "expanded": true,
-        "pages": [
-          "platform/quickstart",
-          "platform/key-concepts",
-          "platform/configuration/settings",
-          "platform/configuration/user-management",
-          "platform/administration/roles-permissions"
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "get-started/what-is-harboros",
+              "get-started/core-concepts",
+              "get-started/quickstart"
+            ]
+          },
+          {
+            "group": "Concepts",
+            "pages": [
+              "concepts/contract-is-the-atom",
+              "concepts/lifecycle-model",
+              "concepts/portolan",
+              "concepts/beacon",
+              "concepts/lenses",
+              "concepts/glossary"
+            ]
+          },
+          {
+            "group": "Workflows",
+            "pages": [
+              "workflows/weekly-forecast",
+              "workflows/renewal-review",
+              "workflows/pipeline-review",
+              "workflows/snapshots-positions",
+              "workflows/variance-analysis",
+              "workflows/board-preparation"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "integrations/overview",
+              "integrations/salesforce",
+              "integrations/hubspot",
+              "integrations/netsuite",
+              "integrations/google-drive",
+              "integrations/microsoft-365"
+            ]
+          },
+          {
+            "group": "Trust & Security",
+            "pages": [
+              "trust/architecture",
+              "trust/data-handling",
+              "trust/audit-traceability",
+              "trust/privacy",
+              "trust/subprocessors"
+            ]
+          }
         ]
       },
       {
-        "group": "Analytics",
-        "icon": "chart-bar",
-        "expanded": true,
-        "pages": [
-          "analytics/quickstart",
-          "analytics/connect-data",
-          "analytics/dashboards/create-dashboard",
-          "analytics/reports/scheduled-reports"
-        ]
-      },
-      {
-        "group": "Integrations",
-        "icon": "plug",
-        "expanded": true,
-        "pages": [
-          "integrations/quickstart",
-          "integrations/authentication",
-          "integrations/connectors/crm",
-          "integrations/webhooks/configure"
-        ]
+        "tab": "Changelog",
+        "pages": ["changelog/index"]
       }
     ]
   },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
   "navbar": {
-    "links": [],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Open App",
+      "href": "https://app.harboros.co"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/yourcompany",
-      "linkedin": "https://linkedin.com/company/yourcompany"
+      "linkedin": "https://www.linkedin.com/company/harboros"
     }
   }
 }
