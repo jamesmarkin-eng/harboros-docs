@@ -18,7 +18,7 @@
             "pages": [
               "get-started/what-is-harboros",
               "get-started/core-concepts",
-              "concepts/glossary",
+              "get-started/glossary",
               "get-started/quickstart"
             ]
           },
