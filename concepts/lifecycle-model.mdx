@@ -1,36 +1,33 @@
 ---
 title: "Lifecycle model"
-description: "The stages a contract moves through, and why HarborOS tracks the stage instead of the activity around it."
+description: "How HarborOS works out where every contract stands — active, renewing, expanding, or churning — without you maintaining a status field."
 source_class: product-knowledge
 ---
 
-Every contract moves through a predictable set of stages, from the day it's signed to the day it ends. HarborOS tracks the contract by its stage in that life — not by the emails, tasks, and meetings happening around it. The stage is what determines how a contract counts toward your numbers.
+A contract moves through a life: it starts, it's live for a term, it comes up for renewal, and it either continues — larger, smaller, or the same — or it ends. HarborOS doesn't ask you to tag a contract with its stage and keep that tag up to date. It works the stage out from facts the contract already holds.
 
-## The stages
+## What the lifecycle is read from
 
-A contract moves through these stages in order:
+Three things on the contract determine where it stands:
 
-- **New** — Signed and starting. Its [ARR](/get-started/glossary) joins your active base as new business.
-- **Active** — Live and being delivered. This is where a contract spends most of its life.
-- **Up for renewal** — Approaching the end of its term, where the customer decides whether to continue. See [renewal](/get-started/glossary).
-- **Renewed** — Continued into a new term. If the customer increased their commitment, that's [expansion](/get-started/glossary); if they reduced it, [contraction](/get-started/glossary).
-- **Churned** — Ended without renewing. The [ARR](/get-started/glossary) leaves your base.
+- **Its term** — the `term_start` and `term_end` dates. These define when the contract is live and contributing to your [ARR](/get-started/glossary).
+- **Its renewal links** — a contract can be linked to the contract that replaces it when it renews. This is how HarborOS connects one term to the next instead of treating a renewal as a brand-new, unrelated deal.
+- **Its renewal likelihood** — your call on what happens at renewal: *likely*, *at risk*, *churn*, or *unset*. This is operator judgment, not a system guess.
 
-A contract is always in exactly one stage. There's no in-between, and no contract sitting outside the model.
+## How HarborOS reads it
 
-## Why stage, not activity
+From those three inputs, the rest follows automatically:
 
-A CRM tracks activity: who emailed whom, which task is open, what the rep logged. That tells you what people are *doing*, but not what a contract *is* right now. HarborOS tracks the stage directly, because the stage is what your numbers depend on. A contract that's up for renewal counts differently than one that's already churned, no matter how much activity is attached to either.
+- **Active** — today falls within the term and the contract isn't flagged to churn. It counts toward your total ARR.
+- **Up for renewal** — the term is ending. You set the likelihood and, when the renewal is signed, link it to its successor.
+- **New business vs. a renewal** — a contract with no predecessor link is new business. One that's linked back to a prior contract is a renewal.
+- **Expansion or contraction** — when a renewal's ARR is higher than the contract it replaced, that's [expansion](/get-started/glossary); lower is [contraction](/get-started/glossary). This is what separates gross retention from net retention.
+- **Churn** — flag a contract's likelihood as *churn* and its ARR drops out of your totals. See [churn](/get-started/glossary).
 
-This is what lets the rest of the product stay consistent. When a contract changes stage, every number that depends on it — recurring revenue, your renewal base, retention — moves with it automatically.
+## One place it asks you to decide
 
-## How stage drives your numbers
+A contract can't both be flagged to churn *and* be linked to a renewal — that's two opposite claims about the same customer. When that happens, HarborOS treats it as a conflict and holds both sides out of your totals until you resolve it: either remove the renewal link or change the likelihood. The system won't quietly pick one for you, because the number has to be defensible.
 
-Each stage feeds a different part of HarborOS:
+## Why it's computed, not stored
 
-- New and renewed contracts build your active [ARR](/get-started/glossary).
-- Up-for-renewal contracts form your renewal base and show up in Renewals.
-- Expansion and contraction at renewal are what separate [gross retention from net retention](/get-started/glossary).
-- Churned contracts drop out of the base and appear as losses in your [ARR waterfall](/get-started/glossary).
-
-Because the stage is tracked on the contract itself, these aren't separate counts you maintain — they're the same contracts, read through [different lenses](/concepts/lenses).
+Because the lifecycle is read from the contract's own facts, there's no separate stage field to keep in sync. Change a term date or link a renewal, and every number that depends on it updates with it — the same principle as [Contract is the atom](/concepts/contract-is-the-atom), applied across time.
