@@ -39,7 +39,7 @@
               "workflows/weekly-forecast",
               "workflows/renewal-review",
               "workflows/pipeline-review",
-              "workflows/snapshots-positions",
+              "workflows/snapshots",
               "workflows/variance-analysis",
               "workflows/board-preparation"
             ]
