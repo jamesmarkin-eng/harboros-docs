@@ -41,7 +41,8 @@
               "workflows/pipeline-review",
               "workflows/snapshots",
               "workflows/variance-analysis",
-              "workflows/board-preparation"
+              "workflows/board-preparation",
+              "workflows/scratch-pad"
             ]
           },
           {
