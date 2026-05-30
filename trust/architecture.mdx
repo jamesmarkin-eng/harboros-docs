@@ -1,6 +1,27 @@
 ---
 title: "Architecture"
-description: "How HarborOS is built for trust."
+description: "How HarborOS is built so that every number is reproducible, traceable, and yours alone."
+source_class: product-knowledge
 ---
 
-Coming soon.
+HarborOS is built around one goal: every number you see should be reproducible, explainable, and survive scrutiny. A few design choices make that true.
+
+## One source of record
+
+Every figure in HarborOS is derived from your contracts — there are no parallel copies of ARR, renewals, or retention kept somewhere else to drift out of sync. This is why surfaces can't disagree and why any number traces back to the contracts behind it. See [Contract is the atom](/concepts/contract-is-the-atom).
+
+## The numbers are deterministic
+
+Your [ARR](/get-started/glossary), retention, ARR movement, and forecast are computed by fixed rules from your contract data. The same inputs always produce the same result — there's no randomness and no model guessing in the figures themselves. That's what lets a number be reconstructed and defended later.
+
+## AI assists; it never decides the numbers
+
+HarborOS uses AI in two narrow places: reading the terms out of your contract documents (extraction), and writing plain-language summaries and answers (narratives and [Beacon](/concepts/beacon)). AI never changes your ARR, your forecast, or a contract's lifecycle state. The math sits in the deterministic layer; AI sits beside it, helping you read and enter data faster — not deciding what's true. Even the contracts AI reads don't count until you confirm them ([Judgment is the gate](/concepts/judgment-is-the-gate)).
+
+## Your data is your own
+
+Every record is scoped to your organization. Users in your workspace can only read your organization's data, enforced at the database level, and [Beacon](/concepts/beacon) runs as you — it can only see what you can already see. Nothing crosses between organizations.
+
+## Why it's built this way
+
+Reproducible numbers, a single source of record, and strict isolation are what let a finance leader stand behind every figure — in a board meeting, in diligence, or under an auditor's questions. The architecture exists to make trust the default, not something you have to verify by hand.
