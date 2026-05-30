@@ -1,6 +1,49 @@
 ---
 title: "Beacon"
-description: "The intelligence and conversation layer."
+description: "Ask questions about your book in plain English. Beacon answers from your real contracts and deals — never from guesswork."
+source_class: product-knowledge
 ---
 
-Coming soon.
+Beacon is the part of HarborOS you can ask questions. You type a question the way you'd ask a colleague — "what's renewing in the next 60 days?", "how did ARR change last quarter?", "show me everything for Acme" — and Beacon answers in plain language, with the numbers.
+
+What makes it useful for finance work, rather than a novelty, is where the answers come from. Beacon never answers from memory or from a general guess. Every figure it gives you comes from a live lookup against your own contracts and deals at the moment you ask. If the data isn't there, it tells you plainly instead of filling the gap.
+
+## How it answers
+
+When you ask something, Beacon chooses from a small set of read-only lookups over your data, runs them, and writes its answer from what comes back. It can't invent a customer, an ARR figure, or a date — if a number appears in the answer, it came from a record.
+
+The lookups cover the questions finance teams actually ask:
+
+- Search your contracts by customer, status, or whether they auto-renew.
+- List what's renewing or expiring inside a window you choose.
+- Pull portfolio totals — contract count, total and average ARR, how many auto-renew, how many expire soon.
+- Open the full extracted detail on a single contract.
+- Project ARR forward up to 24 months.
+- Build an ARR bridge between two dates, broken into new, expansion, contraction, and churn.
+
+The forecast and the bridge aren't Beacon's own estimates. They're worked out by the same rules the rest of HarborOS uses — from your contract term dates, your renewal links, and the renewal judgment you've set — and they produce the same result every time. A contract counts as churn in a bridge only when you've marked it churn, or its term ended well past its grace period with nothing renewing it forward; a contract still inside its grace period is treated as pending renewal, not churn.
+
+## Charts and board slides
+
+When a picture carries the answer better than a sentence, Beacon can draw it instead of only describing it — ARR over time, a renewal timeline, customer concentration, an ARR waterfall, a forecast with best- and worst-case bands, or a board-ready KPI slide. The chart is built from the same numbers Beacon just looked up; it isn't drawn separately from the answer.
+
+## What Beacon won't do
+
+Beacon reads; it never writes. It can't change ARR, mark a renewal, promote a deal, or edit a contract. Every judgment that moves your numbers still happens where you make it — in Renewals, in Pipeline, on the contract itself. Beacon helps you find and understand the numbers; it never becomes the thing that sets them.
+
+## It only sees your data
+
+Beacon runs as you. It can read only what your HarborOS account can already read — your organization's contracts and deals, and nothing from anyone else's.
+
+It's also careful with the contents of your documents. A contract PDF can contain any text at all, so Beacon treats everything inside your documents strictly as information to report — never as instructions to act on. Wording buried in an uploaded file can't redirect what Beacon does.
+
+Each answer is kept with its conversation, along with a record of the lookups Beacon ran to produce it.
+
+<CardGroup cols={2}>
+  <Card title="Lenses" href="/concepts/lenses">
+    The Contracts, Renewals, and Pipeline data Beacon reads from.
+  </Card>
+  <Card title="Lifecycle model" href="/concepts/lifecycle-model">
+    The rules behind Beacon's forecast and ARR bridge.
+  </Card>
+</CardGroup>
