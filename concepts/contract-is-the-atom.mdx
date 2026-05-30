@@ -1,37 +1,35 @@
 ---
 title: "Contract is the atom"
-description: "The contract is the canonical record from which every number in HarborOS derives."
+description: "Why every number in HarborOS is built from your contracts."
 source_class: product-knowledge
 ---
 
-In HarborOS, the contract is the atom: the single canonical record from which every number derives. ARR, renewals, churn, expansion, retention, the board waterfall, the forecast — none of them are stored, maintained, or reconciled on their own. Each is a question asked of the same contracts.
+Everything in HarborOS is built from one thing: the contract. When you add or change a contract, every number that relies on it updates with it. You don't keep your recurring revenue in one spreadsheet, your renewals in another, and a board summary in a third — and you never have to make them match, because they all come from the same contracts.
 
-## Why this matters
+## What "the atom" means
 
-Most finance teams keep ARR in one place, the renewal forecast in another, and the board waterfall in a third, then reconcile them by hand every cycle. That spreadsheet in the middle isn't a discipline problem or a tooling problem — it's an [architecture problem](/get-started/what-is-harboros). The number has no home, so it lives wherever someone last built it.
+An atom is the smallest building block — the thing everything else is made of. In HarborOS, that's the contract. It holds the facts once, and every screen and report is built on top of it.
 
-A CRM tracks intent. An ERP tracks history. Neither models the contract's life — what renews, what expands, what's at risk. HarborOS does. Once the contract is the source of record, the numbers can't disagree, because they are all reading the same thing.
+In most companies it works the other way around. The numbers that matter — what you're earning, what's renewing, what you might lose — each live in their own spreadsheet that someone updates by hand. When a deal changes, you have to remember every place that number shows up and fix each one. HarborOS removes that step. You change the contract; everything downstream follows.
 
 <Note>
-One record, many views. Zero reconciliation.
+Change a contract once, and every number that uses it updates with it. There's nothing to match up by hand.
 </Note>
 
-## What derives from the contract
+## What your contracts power
 
-| Number | The question it answers of the contracts |
-| --- | --- |
-| ARR | What recurring value is currently active? |
-| Renewals | What is up for renewal, and what is at risk? |
-| Expansion / contraction | How is the existing base growing or shrinking? |
-| Churn | What has been lost? |
-| GRR / NRR | How much revenue are we retaining, with and without expansion? |
-| Waterfall | How did ARR move from one period to the next? |
-| Forecast | What do we expect, and on what basis? |
+Because everything starts from the contract, your contracts feed the numbers you already track. A few you'll recognize:
 
-Each is computed deterministically from the contract record — never entered by hand, never reconciled against a parallel copy.
+- Recurring revenue
+- What's coming up for renewal, and what looks at risk
+- Growth and shrinkage within your existing customers
+- What you've lost to churn
+- How much revenue you're keeping (retention)
+- How your revenue changed since last quarter
+- Your forecast
 
-## The consequence
+This isn't the full list — and that's the point. Just about anything you'd normally pull together in a finance spreadsheet is built from the same contracts. So the numbers always agree with each other, and you can always see exactly which contracts produced them.
 
-Because every number traces back to a contract, every number is explainable and reconstructable — it survives board scrutiny and diligence. This is also why the product's surfaces are [lenses, not separate tools](/concepts/lenses): they look at one underlying reality from different angles. It is why [Portolan](/concepts/portolan) can preserve not just a number but the belief behind it, and why [Beacon](/concepts/beacon) can explain a movement by pointing at the contracts that caused it.
+## Why it matters to you
 
-CRM tracks intent. ERP tracks history. HarborOS tracks truth.
+When every number traces back to a contract, you can always answer "where did this come from?" — whether you're in a board meeting, talking to an investor, or just double-checking your own work. It's also why the different parts of HarborOS aren't separate tools: they're [different views of the same contracts](/concepts/lenses).
