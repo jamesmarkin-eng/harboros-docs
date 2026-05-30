@@ -1,6 +1,37 @@
 ---
 title: "Contract is the atom"
-description: "The canonical primitive of the system."
+description: "The contract is the canonical record from which every number in HarborOS derives."
+source_class: product-knowledge
 ---
 
-Coming soon.
+In HarborOS, the contract is the atom: the single canonical record from which every number derives. ARR, renewals, churn, expansion, retention, the board waterfall, the forecast — none of them are stored, maintained, or reconciled on their own. Each is a question asked of the same contracts.
+
+## Why this matters
+
+Most finance teams keep ARR in one place, the renewal forecast in another, and the board waterfall in a third, then reconcile them by hand every cycle. That spreadsheet in the middle isn't a discipline problem or a tooling problem — it's an [architecture problem](/get-started/what-is-harboros). The number has no home, so it lives wherever someone last built it.
+
+A CRM tracks intent. An ERP tracks history. Neither models the contract's life — what renews, what expands, what's at risk. HarborOS does. Once the contract is the source of record, the numbers can't disagree, because they are all reading the same thing.
+
+<Note>
+One record, many views. Zero reconciliation.
+</Note>
+
+## What derives from the contract
+
+| Number | The question it answers of the contracts |
+| --- | --- |
+| ARR | What recurring value is currently active? |
+| Renewals | What is up for renewal, and what is at risk? |
+| Expansion / contraction | How is the existing base growing or shrinking? |
+| Churn | What has been lost? |
+| GRR / NRR | How much revenue are we retaining, with and without expansion? |
+| Waterfall | How did ARR move from one period to the next? |
+| Forecast | What do we expect, and on what basis? |
+
+Each is computed deterministically from the contract record — never entered by hand, never reconciled against a parallel copy.
+
+## The consequence
+
+Because every number traces back to a contract, every number is explainable and reconstructable — it survives board scrutiny and diligence. This is also why the product's surfaces are [lenses, not separate tools](/concepts/lenses): they look at one underlying reality from different angles. It is why [Portolan](/concepts/portolan) can preserve not just a number but the belief behind it, and why [Beacon](/concepts/beacon) can explain a movement by pointing at the contracts that caused it.
+
+CRM tracks intent. ERP tracks history. HarborOS tracks truth.
