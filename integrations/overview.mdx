@@ -1,6 +1,34 @@
 ---
-title: "Overview"
-description: "How HarborOS connects to your stack."
+title: "Integrations overview"
+description: "How HarborOS connects to your CRM and your document storage — and what you control about what comes in."
+source_class: product-knowledge
 ---
 
-Coming soon.
+HarborOS connects to two kinds of source: your **CRM**, which brings in deals to forecast, and your **document storage**, where your signed contracts live so HarborOS can read their terms. You manage both from the **Integrations** screen.
+
+## Connecting a source
+
+Connecting is a guided authorization — you click **Connect** on a source, approve access in the window that opens, and you're done. HarborOS doesn't ask you to copy API keys or configure anything by hand.
+
+## What a CRM connection does
+
+Once a CRM is connected, your deals sync in — but they don't go straight into your numbers. They land in **Docking**, a review queue, where you promote the ones you'll stand behind and dismiss the rest. Only promoted deals reach your forecast. (See [Pipeline review](/workflows/pipeline-review) and, for why this gate exists, [Judgment is the gate](/concepts/judgment-is-the-gate).)
+
+You also control *which* deals sync. Per connection you can set filters — a minimum ARR, excluding closed deals, only future close dates, and specific stages or deal types to leave out — and map your CRM's fields to HarborOS's. So the deals that arrive are already scoped to what matters.
+
+## What a document source does
+
+A connected document source (like Google Drive) lets HarborOS read your contract files and extract their terms automatically. Extracted contracts still need your confirmation before they count — see [the Quickstart](/get-started/quickstart).
+
+## Available now
+
+- **CRM:** HubSpot, Salesforce, Attio
+- **Documents:** Google Drive (Pro plan)
+
+## Coming soon
+
+- **Documents:** Microsoft OneDrive, Microsoft SharePoint, Dropbox
+- **CRM:** Pipedrive, Close, Copper
+- **Billing:** Chargebee, Maxio
+
+You can request any of these from the Integrations screen to register interest.
