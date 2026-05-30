@@ -18,6 +18,7 @@
             "pages": [
               "get-started/what-is-harboros",
               "get-started/core-concepts",
+              "concepts/glossary",
               "get-started/quickstart"
             ]
           },
@@ -28,8 +29,7 @@
               "concepts/lifecycle-model",
               "concepts/portolan",
               "concepts/beacon",
-              "concepts/lenses",
-              "concepts/glossary"
+              "concepts/lenses"
             ]
           },
           {
