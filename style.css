@@ -38,3 +38,14 @@ card {
 #footer {
   background: #141C2E;
 }
+
+/* Soften TOC */
+toc-item {
+  font-family: 'DM Sans', sans-serif;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+eyebrow {
+  color: #8A97A1;
+}
