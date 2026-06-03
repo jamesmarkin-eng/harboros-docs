@@ -5,18 +5,18 @@
 
 /* Sidebar active state */
 #sidebar-content li[data-active] {
-  color: #B5742B;
+  color: #141C2E;
 }
 
 /* Links */
 link {
-  color: #B5742B;
+  color: #141C2E;
 }
 
 /* Topbar CTA button */
 #topbar-cta-button {
-  background: #B5742B;
-  border-color: #B5742B;
+  background: #141C2E;
+  border-color: #141C2E;
 }
 
 /* Page title in Instrument Serif */
