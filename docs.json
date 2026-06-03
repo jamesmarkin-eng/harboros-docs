@@ -106,5 +106,6 @@
   "logo": {
     "light": "/images/harboros-logo-light.svg",
     "dark": "/images/harboros-logo-horizontal-dark(1).png"
-  }
+  },
+  "description": "The contract intelligence layer for B2B SaaS finance teams. One system for ARR, renewals, forecasts, and board reporting — grounded in contracts, not spreadsheets."
 }
