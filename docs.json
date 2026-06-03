@@ -85,5 +85,8 @@
     "socials": {
       "linkedin": "https://www.linkedin.com/company/harboros"
     }
+  },
+  "seo": {
+    "indexing": "all"
   }
 }
