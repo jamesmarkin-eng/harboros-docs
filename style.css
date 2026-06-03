@@ -2,50 +2,32 @@
 #navbar {
   background: #141C2E;
 }
-
 /* Sidebar active state */
 #sidebar-content li[data-active] {
   color: #141C2E;
 }
-
 /* Links */
 link {
   color: #141C2E;
 }
-
 /* Topbar CTA button */
 #topbar-cta-button {
   background: #141C2E;
   border-color: #141C2E;
 }
-
 /* Page title in Instrument Serif */
 #page-title {
   font-family: 'Instrument Serif', Georgia, serif;
 }
-
 /* Code blocks */
 code-block {
   font-family: 'DM Mono', ui-monospace, monospace;
 }
-
 /* Soften card borders */
 card {
   border-color: #E2DCCB;
 }
-
 /* Footer */
 #footer {
   background: #141C2E;
-}
-
-/* Soften TOC */
-toc-item {
-  font-family: 'DM Sans', sans-serif;
-  text-transform: none;
-  letter-spacing: normal;
-}
-
-eyebrow {
-  color: #8A97A1;
 }
