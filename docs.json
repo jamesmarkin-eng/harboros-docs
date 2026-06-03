@@ -3,9 +3,9 @@
   "theme": "maple",
   "name": "HarborOS",
   "colors": {
-    "primary": "#0B1F3A",
-    "light": "#1E3A5F",
-    "dark": "#0B1F3A"
+    "primary": "#B5742B",
+    "light": "#F4F1EA",
+    "dark": "#B5742B"
   },
   "favicon": "/favicon.ico",
   "navigation": {
@@ -92,6 +92,12 @@
   "integrations": {
     "ga4": {
       "measurementId": "G-DLF446D0F9"
+    }
+  },
+  "background": {
+    "color": {
+      "light": "#F7F6F3",
+      "dark": "#141C2E"
     }
   }
 }
