@@ -88,5 +88,10 @@
   },
   "seo": {
     "indexing": "all"
+  },
+  "integrations": {
+    "ga4": {
+      "measurementId": "G-DLF446D0F9"
+    }
   }
 }
