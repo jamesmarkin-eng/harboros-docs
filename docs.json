@@ -3,11 +3,14 @@
   "theme": "willow",
   "name": "HarborOS",
   "colors": {
-    "primary": "#B5742B",
+    "primary": "#141C2E",
     "light": "#F4F1EA",
-    "dark": "#B5742B"
+    "dark": "#141C2E"
   },
-  "favicon": "/favicon.ico",
+  "favicon": {
+    "light": "/images/harboros-favicon-reversed(1).svg",
+    "dark": "/images/harboros-favicon.svg"
+  },
   "navigation": {
     "tabs": [
       {
@@ -99,5 +102,9 @@
       "light": "#F7F6F3",
       "dark": "#141C2E"
     }
+  },
+  "logo": {
+    "light": "/images/harboros-logo-light.svg",
+    "dark": "/images/harboros-logo-horizontal-dark(1).png"
   }
 }
