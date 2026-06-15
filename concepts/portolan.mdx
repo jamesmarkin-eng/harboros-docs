@@ -1,6 +1,51 @@
 ---
 title: "Portolan"
-description: "Snapshots and positions: preserving operational truth over time."
+description: "Save what the business looked like on a given day, then compare any two days to see exactly what moved."
+source_class: "product-knowledge"
 ---
 
-Coming soon.
+Your ARR, your renewal book, and your pipeline all move week to week. Most screens in HarborOS show you the current state — the business as it stands right now. Portolan is where you save a dated record of how that picture looked at a particular moment, and then put two of those records side by side to see what changed.
+
+A saved record is a [Snapshot](/get-started/glossary). Once you save it, it doesn't change — even as contracts renew, deals advance, and numbers move underneath it. A Snapshot you took three weeks ago still shows the business exactly as it stood three weeks ago. That's the point of taking them: a number in last quarter's board Snapshot can be reopened and traced long after the underlying contracts have changed.
+
+## Three kinds of Snapshot
+
+Portolan captures three views, and each one is saved on its own:
+
+- **ARR Snapshot** — the whole book. Total ARR, how many contracts are active, your largest customers, what's up for renewal in the next 30 / 60 / 90 / 180 days, and a 12-month forecast in base, best, and worst case.
+- **Renewal Snapshot** — just the renewal book. Every contract up for renewal within the next 180 days (plus any already expired but still on the book), grouped by how likely it is to renew and by when it expires, with a forecast of what that book is worth once likelihood is applied — and a net-retention figure for it.
+- **Pipeline Snapshot** — every open deal, with its stage, owner, expected close date, and ARR both raw and weighted by the deal's probability.
+
+They're captured separately so you can freeze one part of the business without the others — for example, locking the renewal book before a renewal review without touching your ARR record.
+
+## Labels and versions
+
+Every Snapshot gets a label you choose — `Q2 board`, `Weekly forecast — May 26` — and a version number. The version counts up each time you capture that kind of Snapshot, so labels can repeat and the version still tells two apart. Your eighth ARR Snapshot is V8, whatever you named it. Each kind keeps its own count.
+
+## Comparisons
+
+The reason to save Snapshots is to compare them. A Comparison takes two Snapshots of the same kind and shows what changed between them, line by line. What it surfaces depends on the kind:
+
+- An **ARR** comparison shows new customers, churned customers, expansions, contractions, and how each renewal window moved.
+- A **Renewal** comparison shows which contracts changed likelihood (say, moved to at-risk), which entered or dropped out of the window, and which changed in ARR.
+- A **Pipeline** comparison shows deals won, lost, advanced a stage, slipped back, changed in size, or newly added.
+
+Every figure in a Comparison comes straight from the two saved Snapshots. The math is fixed — run the same comparison again and you get the same result. You can save a Comparison so the diff itself is kept, with its own title.
+
+## Written summaries
+
+Any Snapshot or Comparison can carry a written summary alongside the numbers. You can write it yourself. On Enterprise plans, HarborOS can also draft a first version for you, built only from the figures already in that Snapshot — it describes the numbers, it never changes them. The draft is yours to edit or replace.
+
+## Sharing
+
+A Snapshot or Comparison can be shared by link with people who don't have a HarborOS login — useful for a board member or an investor. Sharing is off by default and turned on one Snapshot at a time, so nothing is reachable by link until you decide it should be.
+
+<CardGroup cols={2}>
+  <Card title="Lenses" href="/concepts/lenses">
+    Where the data behind each Snapshot comes from — Contracts, Renewals, and Pipeline.
+  </Card>
+
+  <Card title="Beacon" href="/concepts/beacon">
+    Asking questions about your contracts, renewals, and pipeline.
+  </Card>
+</CardGroup>

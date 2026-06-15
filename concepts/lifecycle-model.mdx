@@ -1,6 +1,33 @@
 ---
 title: "Lifecycle model"
-description: "How HarborOS models the contract lifecycle."
+description: "How HarborOS works out where every contract stands — active, renewing, expanding, or churning — without you maintaining a status field."
+source_class: "product-knowledge"
 ---
 
-Coming soon.
+A contract moves through a life: it starts, it's live for a term, it comes up for renewal, and it either continues — larger, smaller, or the same — or it ends. HarborOS doesn't ask you to tag a contract with its stage and keep that tag up to date. It works the stage out from facts the contract already holds.
+
+## What the lifecycle is read from
+
+Three things on the contract determine where it stands:
+
+- **Its term** — the `term_start` and `term_end` dates. These define when the contract is live and contributing to your [ARR](/get-started/glossary).
+- **Its renewal links** — a contract can be linked to the contract that replaces it when it renews. This is how HarborOS connects one term to the next instead of treating a renewal as a brand-new, unrelated deal.
+- **Its renewal likelihood** — your call on what happens at renewal: _likely_, maybe, _at risk_, _churn_, or _unset_. This is operator judgment, not a system guess.
+
+## How HarborOS reads it
+
+From those three inputs, the rest follows automatically:
+
+- **Active** — today falls within the term and the contract isn't flagged to churn. It counts toward your total ARR.
+- **Up for renewal** — the term is ending. You set the likelihood and, when the renewal is signed, link it to its successor.
+- **New business vs. a renewal** — a contract with no predecessor link is new business. One that's linked back to a prior contract is a renewal.
+- **Expansion or contraction** — when a renewal's ARR is higher than the contract it replaced, that's [expansion](/get-started/glossary); lower is [contraction](/get-started/glossary). This is what separates gross retention from net retention.
+- **Churn** — flag a contract's likelihood as _churn_ and its ARR drops out of your totals. See [churn](/get-started/glossary).
+
+## One place it asks you to decide
+
+A contract can't both be flagged to churn _and_ be linked to a renewal — that's two opposite claims about the same customer. When that happens, HarborOS treats it as a conflict and holds both sides out of your totals until you resolve it: either remove the renewal link or change the likelihood. The system won't quietly pick one for you, because the number has to be defensible.
+
+## Why it's computed, not stored
+
+Because the lifecycle is read from the contract's own facts, there's no separate stage field to keep in sync. Change a term date or link a renewal, and every number that depends on it updates with it — the same principle as [Contract is the atom](/concepts/contract-is-the-atom), applied across time.
