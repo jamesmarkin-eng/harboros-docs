@@ -1,35 +1,62 @@
 ---
 title: "Contract is the atom"
-description: "Why every number in HarborOS is built from your contracts."
-source_class: product-knowledge
+description: "Why every number a finance operator reports — ARR, renewals, churn, expansion, forecast, GRR/NRR — derives from one contract record, with nothing to reconcile."
 ---
 
-Everything in HarborOS is built from one thing: the contract. When you add or change a contract, every number that relies on it updates with it. You don't keep your recurring revenue in one spreadsheet, your renewals in another, and a board summary in a third — and you never have to make them match, because they all come from the same contracts.
+You need ARR, renewals, churn, expansion, the forecast, GRR/NRR, the waterfalls, and the board numbers to agree. Today they don't — not because anyone did the math wrong, but because each one is assembled from a different source and stitched together by hand. The contract is how HarborOS makes them agree.
 
-## What "the atom" means
+## The spreadsheet is an architecture problem
 
-An atom is the smallest building block — the thing everything else is made of. In HarborOS, that's the contract. It holds the facts once, and every screen and report is built on top of it.
+Between your CRM, your ERP, your board deck, your renewal forecast, and your ARR reporting sits a spreadsheet. It exists because no system upstream of it holds the whole picture, so someone exports from each, reconciles the differences, and publishes the result. Every reporting cycle, that reconciliation runs again.
 
-In most companies it works the other way around. The numbers that matter — what you're earning, what's renewing, what you might lose — each live in their own spreadsheet that someone updates by hand. When a deal changes, you have to remember every place that number shows up and fix each one. HarborOS removes that step. You change the contract; everything downstream follows.
+The spreadsheet is not a tooling gap you can close by buying a better reporting tool. It is an architecture problem: the systems you already own model the wrong thing.
 
-<Note>
-Change a contract once, and every number that uses it updates with it. There's nothing to match up by hand.
-</Note>
+- **CRM tracks intent.** A deal is a forecast of what sales believes will close. It is not a record of what was agreed.
+- **ERP tracks history.** It records what has been invoiced and collected. It does not model the contract lifecycle — renewals, expansions, and the term boundaries that decide what counts as ARR today.
+- **HarborOS tracks truth.** It models the contract itself, on its own lifecycle, as the thing every number derives from.
 
-## What your contracts power
+Neither CRM nor ERP models the contract lifecycle correctly. That is why the spreadsheet exists — and why a different primitive is the only thing that removes it.
 
-Because everything starts from the contract, your contracts feed the numbers you already track. A few you'll recognize:
+## One record, many views
 
-- Recurring revenue
-- What's coming up for renewal, and what looks at risk
-- Growth and shrinkage within your existing customers
-- What you've lost to churn
-- How much revenue you're keeping (retention)
-- How your revenue changed since last quarter
-- Your forecast
+The contract is the canonical primitive. There is one contract record, and every downstream number is a lens on contracts — not a separate dataset that has to be reconciled back to them.
 
-This isn't the full list — and that's the point. Just about anything you'd normally pull together in a finance spreadsheet is built from the same contracts. So the numbers always agree with each other, and you can always see exactly which contracts produced them.
+ARR is contracts, classified and summed as of a date. A renewal is a contract approaching its term boundary. Churn, expansion, and contraction are differences between contract positions across two dates. The forecast is the same contracts projected forward. None of these is a parallel system of record; each is a query over the one record.
 
-## Why it matters to you
+This is what removes the reconciliation. When ARR and the renewal forecast and the board waterfall all read from the same contracts, there is no second source to disagree with — and nothing to stitch together by hand.
 
-When every number traces back to a contract, you can always answer "where did this come from?" — whether you're in a board meeting, talking to an investor, or just double-checking your own work. It's also why the different parts of HarborOS aren't separate tools: they're [different views of the same contracts](/concepts/lenses).
+## What the numbers mean
+
+Because every figure derives from contracts, every figure is traceable to the specific contracts behind it. A contract resolves to exactly one recognition bucket on any given date — active, assumed renewal, grace-expired, churned, or not-yet-active — and a contract that contributes to an ARR total always carries the label explaining *why* it counts. A number is never a figure without a derivation; it is a set of contracts you can open and inspect.
+
+<Warning>
+**The determinism boundary — where truth is computed, and where AI assists.**
+
+ARR, the forecast math, recognition buckets, and contract lifecycle transitions are computed deterministically. The same engine produces the number every time, with no separate path for automated runs versus manual ones, and the result is explainable and reconstructable from the contracts behind it.
+
+AI assists ingestion, extraction, and narrative — reading documents, proposing field values, and writing the prose around a snapshot. It never computes or mutates ARR, forecast truth, or lifecycle state. The boundary is firm: AI proposes, the deterministic engine decides, and an operator confirms. Trust is the product, and this is where it lives.
+</Warning>
+
+## A contract counts only after it's confirmed
+
+A newly extracted contract does not contribute to ARR on arrival. It contributes only after it passes the confirmation gate: an operator has reviewed and confirmed the extraction (or the deal is a won-but-not-yet-papered contract that already counts today). Until then it is held out of every total. A contract flagged as churn is always excluded — no grace window rescues it.
+
+This is the seam between AI-assisted ingestion and deterministic truth: extraction is assisted, but nothing reaches an ARR number until a human confirms it.
+
+{/* TODO(jim): verify — the confirmation gate (isContractCountable in src/lib/contract-eligibility.ts) is documented in detail on a Reference → contract-countable-gate page. That page does not exist in the nav yet. Either create it and link it here, or point this cross-link at an existing page. */}
+
+For how a contract moves through its lifecycle — and the states that decide when it counts — see [Lifecycle model](/concepts/lifecycle-model).
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Lifecycle model" href="/concepts/lifecycle-model">
+    The states a contract moves through, and how each one affects what counts.
+  </Card>
+  <Card title="Lenses" href="/concepts/lenses">
+    How ARR, renewals, and waterfalls are each a view over the same contracts.
+  </Card>
+  <Card title="Glossary" href="/concepts/glossary">
+    Definitions for ARR, GRR/NRR, expansion, contraction, and churn.
+  </Card>
+</CardGroup>
